@@ -11,6 +11,7 @@
     <modules>
         <module>ruoyi-demo</module>
         <module>ruoyi-stream-mq</module>
+        <module>ruoyi-canal-demo</module>
     </modules>
 
     <artifactId>ruoyi-example</artifactId>

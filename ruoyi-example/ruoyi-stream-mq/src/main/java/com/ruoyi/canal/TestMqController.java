@@ -1,4 +1,4 @@
-package com.ruoyi.stream.controller;
+package com.ruoyi.canal;
 
 import com.ruoyi.common.core.domain.R;
 import com.ruoyi.stream.mq.producer.DelayProducer;
