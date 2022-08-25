@@ -1,14 +1,8 @@
 package com.ruoyi.canal;
 
-import com.alibaba.otter.canal.client.CanalConnector;
-import com.alibaba.otter.canal.client.CanalConnectors;
-import com.ruoyi.canal.properties.CanalServerProperties;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
-
-import java.net.InetSocketAddress;
 
 /**
  * 演示模块
@@ -16,22 +10,15 @@ import java.net.InetSocketAddress;
  * @author Lion Li
  */
 @SpringBootApplication
-public class RuoYiDemoApplication {
-
-    @Autowired
-    private CanalServerProperties canalServerProperties;
-    @Autowired
-    private BinlogConsumer binlogConsumer;
-
+public class RuoYiCanalDemoApplication {
     public static void main(String[] args) {
-        SpringApplication application = new SpringApplication(RuoYiDemoApplication.class);
+        SpringApplication application = new SpringApplication(RuoYiCanalDemoApplication.class);
         application.setApplicationStartup(new BufferingApplicationStartup(2048));
-       // initCanalClient();
         application.run(args);
-        System.out.println("(♥◠‿◠)ﾉﾞ  演示模块启动成功   ლ(´ڡ`ლ)ﾞ  ");
+        System.out.println("(♥◠‿◠)ﾉﾞ  canal演示模块启动成功   ლ(´ڡ`ლ)ﾞ  ");
     }
 
-    public  void initCanalClient(){
+/*    public  void initCanalClient(){
         String hostname = canalServerProperties.getHostname();
         int port = canalServerProperties.getPort();
         String destination = canalServerProperties.getDestination();
@@ -45,7 +32,7 @@ public class RuoYiDemoApplication {
         Thread thread = new Thread(new BinlogConsumerThread(canalConnector, binlogConsumer));
         thread.setDaemon(true);
         thread.start();
-    }
+    }*/
 
 
 }

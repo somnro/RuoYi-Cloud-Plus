@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/test-canal")
-public class TestMqController {
+public class TestCanalController {
 
 
     /**
