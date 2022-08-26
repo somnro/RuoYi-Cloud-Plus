@@ -414,3 +414,31 @@ services:
       - kafka
     network_mode: "host"
 
+# 具体说明文档：https://github.com/alibaba/canal/wiki
+  canal-server:
+    image: canal/canal-server:v1.1.5
+    container_name: canal-server
+    ports:
+      - 11111:11111
+    #具体参数详细说明：https://github.com/alibaba/canal/wiki/AdminGuide
+    environment:
+      # slaveId 不与其他重复即可
+      - canal.instance.mysql.slaveId=10
+      #  client 需要指定此 dest
+      - canal.destinations=ruoyi-test
+      # mysql 地址
+      - canal.instance.master.address=127.0.0.1:3306
+      # mysql 用户名
+      - canal.instance.dbUsername=canal
+      # mysql密码
+      - canal.instance.dbPassword=123！@#
+      #需要监控的表
+      - canal.instance.filter.regex=.\*\\\\..\*
+    volumes:
+      #参数目录
+      - /home/canal-server/conf/:/admin/canal-server/conf/
+      #日志目录
+      - /home/canal-server/logs/:/admin/canal-server/logs/
+
+
+
