@@ -427,11 +427,11 @@ services:
       #  client 需要指定此 dest
       - canal.destinations=ruoyi-test
       # mysql 地址
-      - canal.instance.master.address=127.0.0.1:3306
+      - canal.instance.master.address=47.99.219.60:3306
       # mysql 用户名
       - canal.instance.dbUsername=canal
       # mysql密码
-      - canal.instance.dbPassword=123！@#
+      - canal.instance.dbPassword=Shen1992#
       #需要监控的表
       - canal.instance.filter.regex=.\*\\\\..\*
     volumes:

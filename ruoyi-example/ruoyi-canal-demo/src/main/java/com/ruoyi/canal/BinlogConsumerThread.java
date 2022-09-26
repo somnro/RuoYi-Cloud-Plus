@@ -35,13 +35,7 @@ public class BinlogConsumerThread implements Runnable {
     public void run() {
 
         // 订阅数据库
-        canalConnector.subscribe("ruyuan_eshop_order.after_sale_info,ruyuan_eshop_order.after_sale_item," +
-                "ruyuan_eshop_order.after_sale_log,ruyuan_eshop_order.after_sale_refund," +
-                "ruyuan_eshop_order.order_amount_detail,ruyuan_eshop_order.order_amount," +
-                "ruyuan_eshop_order.order_auto_no,ruyuan_eshop_order.order_cancel_scheduled_task," +
-                "ruyuan_eshop_order.order_delivery_detail,ruyuan_eshop_order.order_info," +
-                "ruyuan_eshop_order.order_item,ruyuan_eshop_order.order_payment_detail," +
-                "ruyuan_eshop_order.ruyuan_tend_consistency_task");
+        canalConnector.subscribe("sys.document");
 
         while (running) {
 
